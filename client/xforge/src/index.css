@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-brand: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-label: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
+}
+
+/* Stitch export: XForge Swiss Dark Lemon Yellow (screen f855308f) */
+:root {
+  --background: #121414;
+  --foreground: #e2e2e2;
+  --card: #121414;
+  --card-foreground: #e2e2e2;
+  --popover: #1e2020;
+  --popover-foreground: #e2e2e2;
+  --primary: #ffcc00;
+  --primary-foreground: #3d2f00;
+  --secondary: #1e2020;
+  --secondary-foreground: #e2e2e2;
+  --muted: #1a1c1c;
+  --muted-foreground: #d2c5ab;
+  --accent: #282a2b;
+  --accent-foreground: #e2e2e2;
+  --destructive: #ffb4ab;
+  --border: #e2e2e2;
+  --input: #e2e2e2;
+  --ring: #ffcc00;
+  --sidebar: #121414;
+  --sidebar-foreground: #e2e2e2;
+  --sidebar-primary: #ffcc00;
+  --sidebar-primary-foreground: #6f5700;
+  --sidebar-accent: #1e2020;
+  --sidebar-accent-foreground: #e2e2e2;
+  --sidebar-border: #e2e2e2;
+  --sidebar-ring: #ffcc00;
+  --stitch-surface-lowest: #0c0f0f;
+}
+
+.dark {
+  --background: #121414;
+  --foreground: #e2e2e2;
+  --card: #121414;
+  --card-foreground: #e2e2e2;
+  --popover: #1e2020;
+  --popover-foreground: #e2e2e2;
+  --primary: #ffcc00;
+  --primary-foreground: #3d2f00;
+  --secondary: #1e2020;
+  --secondary-foreground: #e2e2e2;
+  --muted: #1a1c1c;
+  --muted-foreground: #d2c5ab;
+  --accent: #282a2b;
+  --accent-foreground: #e2e2e2;
+  --destructive: #ffb4ab;
+  --border: #e2e2e2;
+  --input: #e2e2e2;
+  --ring: #ffcc00;
+  --sidebar: #121414;
+  --sidebar-foreground: #e2e2e2;
+  --sidebar-primary: #ffcc00;
+  --sidebar-primary-foreground: #6f5700;
+  --sidebar-accent: #1e2020;
+  --sidebar-accent-foreground: #e2e2e2;
+  --sidebar-border: #e2e2e2;
+  --sidebar-ring: #ffcc00;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #121414;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #f5f5f5;
+  }
+}
+
+@layer utilities {
+  .font-label {
+    font-family: var(--font-label);
+  }
+
+  .stitch-label {
+    @apply font-label text-xs font-semibold uppercase tracking-[0.05em];
+  }
+
+  .stitch-display {
+    @apply text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold uppercase leading-[0.9] tracking-[-0.04em];
+  }
+
+  .stitch-headline-md {
+    @apply text-2xl font-semibold tracking-[-0.01em];
+  }
+
+  .stitch-body-lg {
+    @apply text-lg leading-7;
+  }
+
+  .stitch-margin {
+    @apply px-4 sm:px-6 lg:px-10 xl:px-16;
+  }
+}
+
+.markdown-lite p {
+  @apply mb-2 last:mb-0;
+}
+
+.markdown-lite ul {
+  @apply mb-2 list-disc pl-4;
+}
+
+.markdown-lite code {
+  @apply bg-muted px-1 py-0.5 font-mono text-[0.92em];
+}
+
+.markdown-lite strong {
+  @apply font-bold text-foreground;
+}

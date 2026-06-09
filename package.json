@@ -1,0 +1,35 @@
+{
+  "name": "article-md-tool",
+  "version": "0.1.0",
+  "description": "XForge — X articles, marked down. Clean Markdown with YAML frontmatter, Firecrawl, summarize, and chat.",
+  "author": "StageSpace",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "xforge",
+    "article",
+    "markdown",
+    "firecrawl",
+    "self-hosted",
+    "twitter",
+    "x-articles",
+    "summarization",
+    "llm",
+    "knowledge-base"
+  ],
+  "scripts": {
+    "start": "node src/server.js",
+    "build:client": "npm run build --prefix client/xforge",
+    "build": "npm run build:client",
+    "predev": "npm run build:client",
+    "dev": "node --watch src/server.js",
+    "dev:ui": "npm run dev --prefix client/xforge",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

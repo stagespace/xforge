@@ -1,0 +1,9 @@
+services:
+  article-md-tool:
+    build: .
+    container_name: article-md-tool
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:3107:3107"
